@@ -1,0 +1,48 @@
+# serverless.yml
+
+service: slough-api
+
+provider:
+  name: aws
+  role: arn:aws:iam::338528925510:role/slough-api-dev-us-west-2-lambdaRole
+  runtime: nodejs8.10
+  stage: dev
+  region: us-west-2
+
+plugins:
+  - serverless-plugin-include-dependencies
+
+functions:
+  tenant-manager:
+    handler: tenant-manager-server.tenant # reference the file and exported method
+    package: 
+        individually: true
+    events: # events trigger lambda functions
+      - http:
+          path: /tenant/health
+          method: GET
+          cors: true
+      - http:
+          path: /tenant/{id}
+          method: GET
+          cors: true
+      - http:
+          path: /tenants
+          method: GET
+          cors: true
+      - http:
+          path: /tenants/system
+          method: GET
+          cors: true
+      - http:
+          path: /tenant
+          method: POST
+          cors: true
+      - http:
+          path: /tenant
+          method: PUT
+          cors: true
+      - http:
+          path: /tenant/{id}
+          method: DELETE
+          cors: true

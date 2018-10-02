@@ -1,0 +1,33 @@
+{
+  "Name": "slough-api",
+  "version": "1.0.0",
+  "description": "Provide Login authentication for Cognito",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no tests currently specified\""
+  },
+  "dependencies": {
+    "body-parser": "latest",
+    "config": "1.25.1",
+    "express": "latest",
+    "request": "2.81.0",
+    "winston": "latest",
+    "jwt-decode": "latest",
+    "serverless-http": "^1.6.0",
+    "uuid": "3.0.1"
+  },
+  "author": "Amazon Web Services",
+  "contributors": [
+    {
+      "name": "Tod Golding"
+    },
+    {
+      "name": "Judah Bernstein"
+    }
+  ],
+  "devDependencies": {
+    "serverless-plugin-include-dependencies": "^3.1.1",
+    "serverless-plugin-optimize": "^3.1.1-rc.1"
+  },
+  "license": "Apache-2.0"
+}

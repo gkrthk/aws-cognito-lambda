@@ -1,0 +1,28 @@
+# serverless.yml
+
+service: slough-api
+
+provider:
+  name: aws
+  role: arn:aws:iam::338528925510:role/slough-api-dev-us-west-2-lambdaRole
+  runtime: nodejs8.10
+  stage: dev
+  region: us-west-2
+
+plugins:
+  - serverless-plugin-include-dependencies
+
+functions:
+  tenant-reg:
+    handler: tenant-reg-server.reg # reference the file and exported method
+    package: 
+        individually: true
+    events: # events trigger lambda functions
+      - http:
+          path: /reg
+          method: POST
+          cors: true
+      - http:
+          path: /reg/health
+          method: GET
+          cors: true

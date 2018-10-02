@@ -1,0 +1,97 @@
+{
+  "Config": {
+    "dev": {
+      "protocol": "http://",
+      "domain": "127.0.0.1",
+      "region": "us-west-2",
+      "aws_account":"338528925510",
+      "port": {
+        "auth": 3000,
+        "user": 3001,
+        "tenant": 3003,
+        "reg": 3004,
+        "sys": 3011,
+        "product": 3006,
+        "order": 3015
+      },
+      "url": {
+        "auth": "https://iltz1crdy8.execute-api.us-west-2.amazonaws.com/dev/auth",
+        "user": "https://iltz1crdy8.execute-api.us-west-2.amazonaws.com/dev/user",
+        "tenant": "https://iltz1crdy8.execute-api.us-west-2.amazonaws.com/dev/tenant",
+        "reg": "https://iltz1crdy8.execute-api.us-west-2.amazonaws.com/dev/reg",
+        "sys": "https://iltz1crdy8.execute-api.us-west-2.amazonaws.com/dev/sys",
+        "product": "https://iltz1crdy8.execute-api.us-west-2.amazonaws.com/dev/product",
+        "order": "https://iltz1crdy8.execute-api.us-west-2.amazonaws.com/dev/order"
+      },
+      "role": {
+        "sns":""
+      },
+      "name": {
+        "auth": "Authentication Manager",
+        "user": "User Manager",
+        "tenant": "Tenant Manager",
+        "reg": "Tenant Registration Manager",
+        "sys": "System Registration Manager",
+        "product": "Product Manager",
+        "order": "Order Manager"
+      },
+      "table": {
+        "user": "User",
+        "order": "Order",
+        "product": "Product",
+        "tenant": "Tenant"
+      },
+      "userRole": {
+        "systemAdmin" : "SystemAdmin",
+        "systemUser" : "SystemUser",
+        "tenantAdmin" : "TenantAdmin",
+        "tenantUser" : "TenantUser"
+      },
+      "tier": {
+        "system": "System Tier"
+      },
+      "log": {
+        "level": "debug"
+      }
+    },
+    "prod":{
+      "protocol": "https://",
+      "port": {
+        "auth": 3000,
+        "user": 3001,
+        "tenant": 3003,
+        "reg": 3004,
+        "sys": 3011,
+        "product": 3006,
+        "order": 3015
+      },
+      "name": {
+        "auth": "Authentication Manager",
+        "user": "User Manager",
+        "tenant": "Tenant Manager",
+        "reg": "Tenant Registration Manager",
+        "sys": "System Registration Manager",
+        "product": "Product Manager",
+        "order": "Order Manager"
+      },
+      "table": {
+        "user": "User",
+        "order": "Order",
+        "product": "Product",
+        "tenant": "Tenant"
+      },
+      "userRole": {
+        "systemAdmin" : "SystemAdmin",
+        "systemUser" : "SystemUser",
+        "tenantAdmin" : "TenantAdmin",
+        "tenantUser" : "TenantUser"
+      },
+      "tier": {
+        "system": "System Tier"
+      },
+      "log": {
+        "level": "debug"
+      }
+    }
+  }
+}

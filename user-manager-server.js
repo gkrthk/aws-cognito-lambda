@@ -9,12 +9,12 @@ const winston = require('winston');
 const async = require('async');
 
 // Configure Environment
-const configModule = require('../helpers/config.js');
+const configModule = require('./config.js');
 var configuration = configModule.configure(process.env.NODE_ENV);
 // Declare shared modules
-const tokenManager = require('../helpers/token-manager.js');
-const DynamoDBHelper = require('../helpers/dynamodb-helper.js');
-const cognitoUsers = require('../helpers/cognito-user.js');
+const tokenManager = require('./token-manager.js');
+const DynamoDBHelper = require('./dynamodb-helper.js');
+const cognitoUsers = require('./cognito-user.js');
 
 
 // Init the winston log level
@@ -22,6 +22,7 @@ winston.level = configuration.loglevel;
 
 //Variables that are provided through a token
 var bearerToken = '';
+var tenantId = '';
 
 // instantiate application
 var app = express();

@@ -10,7 +10,7 @@ const bodyParser = require('body-parser');
 const uuidV4 = require('uuid/v4');
 
 // Configure Environment
-const configModule = require('../helpers/config.js');
+const configModule = require('./config.js');
 var configuration = configModule.configure(process.env.NODE_ENV);
 
 // Configure Logging
@@ -18,8 +18,8 @@ const winston = require('winston');
 winston.level = configuration.loglevel;
 
 // Include Custom Modules
-const tokenManager = require('../helpers/token-manager.js');
-const DynamoDBHelper = require('../helpers/dynamodb-helper.js');
+const tokenManager = require('./token-manager.js');
+const DynamoDBHelper = require('./dynamodb-helper.js');
 
 // Instantiate application
 var app = express();

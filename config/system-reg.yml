@@ -1,22 +1,9 @@
-# serverless.yml
-
-service: slough-api
-
-provider:
-  name: aws
-  role: arn:aws:iam::338528925510:role/slough-api-dev-us-west-2-lambdaRole
-  runtime: nodejs8.10
-  stage: dev
-  region: us-west-2
-
-plugins:
-  - serverless-plugin-include-dependencies
-
 functions:
   system-reg:
     handler: system-reg-server.sys # reference the file and exported method
-    package: 
-        individually: true
+     package:
+      include:
+        - "system-reg-server.js"
     events: # events trigger lambda functions
       - http:
           path: /sys/admin

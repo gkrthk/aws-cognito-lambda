@@ -12,7 +12,7 @@ const AmazonCognitoIdentity = require('amazon-cognito-identity-js');
 const CognitoUserPool = AmazonCognitoIdentity.CognitoUserPool;
 
 //Configure Environment
-const configModule = require('../helpers/config.js');
+const configModule = require('./config.js');
 var configuration = configModule.configure(process.env.NODE_ENV);
 
 //Configure Logging
@@ -21,7 +21,7 @@ winston.level = configuration.loglevel;
 
 //Include Custom Modules
 //const tokenManager = require('../shared-modules/token-manager/token-manager.js');
-const tokenManager = require('../helpers/token-manager.js');
+const tokenManager = require('./token-manager.js');
 
 // Instantiate application
 var app = express();

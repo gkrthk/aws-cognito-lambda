@@ -9,7 +9,7 @@ const uuidV4 = require('uuid/v4');
 const request = require('request');
 
 //Configure Environment
-const configModule = require('../helpers/config.js');
+const configModule = require('./config.js');
 var configuration = configModule.configure(process.env.NODE_ENV);
 
 //Configure Logging

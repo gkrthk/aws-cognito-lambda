@@ -1,22 +1,9 @@
-# serverless.yml
-
-service: slough-api
-
-provider:
-  name: aws
-  role: arn:aws:iam::338528925510:role/slough-api-dev-us-west-2-lambdaRole
-  runtime: nodejs8.10
-  stage: dev
-  region: us-west-2
-
-plugins:
-  - serverless-plugin-include-dependencies
-
 functions:
   user-manager:
     handler: user-manager-server.user # reference the file and exported method
-    package: 
-        individually: true
+    package:
+      include:
+        - "user-manager-server.js"
     events: # events trigger lambda functions
       - http:
           path: /user/health

@@ -7,6 +7,7 @@
     "test": "echo \"Error: no tests currently specified\""
   },
   "dependencies": {
+    "amazon-cognito-identity-js": "1.16.0",
     "async": "2.3.0",
     "aws-sdk": "2.24.0",
     "body-parser": "latest",
@@ -27,9 +28,8 @@
       "name": "Judah Bernstein"
     }
   ],
+  "license": "Apache-2.0",
   "devDependencies": {
-    "serverless-plugin-include-dependencies": "^3.1.1",
-    "serverless-plugin-optimize": "^3.1.1-rc.1"
-  },
-  "license": "Apache-2.0"
+    "serverless-plugin-include-dependencies": "^3.1.1"
+  }
 }

@@ -1,0 +1,21 @@
+# serverless.yml
+
+service: slough-api
+
+package:
+    individually: true
+    exclude:
+        - "*server.js"
+  
+provider:
+  name: aws
+  runtime: nodejs8.10
+  role: arn:aws:iam::338528925510:role/slough-api-dev-us-west-2-lambdaRole
+  stage: dev
+  region: us-west-2
+
+plugins:
+  - serverless-plugin-include-dependencies
+
+functions: ${file(${opt:config-file}):functions}
+  
